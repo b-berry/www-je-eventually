@@ -35,15 +35,30 @@
 				var settings = {
 
 					// Images (in the format of 'url': 'alignment').
-						images: {
-							'images/bg01.jpg': 'center',
-							'images/bg02.jpg': 'center',
-							'images/bg03.jpg': 'center'
-						},
-
+					images: {
+            //'images/covers/je-cover-acts-of-humanity.jpg': 'center',
+            //'images/covers/je-cover-bnitm.jpg': 'center',
+            //'images/covers/je-cover-rebellion-politik.jpg': 'center',
+            //'images/covers/je-cover-reclaim-freedom.jpg': 'center',
+            //'images/covers/je-cover-wretched.jpg': 'center'
+            'images/backgrounds/je-bg-00.jpg': 'center',
+            'images/backgrounds/je-bg-01.jpg': 'center',
+            'images/backgrounds/je-bg-02.jpg': 'center',
+            'images/backgrounds/je-bg-03.jpg': 'center',
+            'images/backgrounds/je-bg-04.jpg': 'center',
+            'images/backgrounds/je-bg-05.jpg': 'center',
+            'images/backgrounds/je-bg-06.jpg': 'center',
+            'images/backgrounds/je-bg-07.jpg': 'center',
+            'images/backgrounds/je-bg-08.jpg': 'center',
+            'images/backgrounds/je-bg-09.jpg': 'center',
+            'images/backgrounds/je-bg-10.jpg': 'center',
+            'images/backgrounds/je-bg-11.jpg': 'center',
+            'images/backgrounds/je-bg-12.jpg': 'center',
+            'images/backgrounds/je-bg-13.jpg': 'center',
+            'images/backgrounds/je-bg-14.jpg': 'center'
+					},
 					// Delay.
-						delay: 6000
-
+					delay: 7000
 				};
 
 			// Vars.
@@ -59,22 +74,22 @@
 				for (k in settings.images) {
 
 					// Create BG.
-						$bg = document.createElement('div');
-							$bg.style.backgroundImage = 'url("' + k + '")';
-							$bg.style.backgroundPosition = settings.images[k];
-							$wrapper.appendChild($bg);
+					$bg = document.createElement('div');
+						$bg.style.backgroundImage = 'url("' + k + '")';
+						$bg.style.backgroundPosition = settings.images[k];
+						$wrapper.appendChild($bg);
 
 					// Add it to array.
-						$bgs.push($bg);
+					$bgs.push($bg);
 
 				}
 
 			// Main loop.
-				$bgs[pos].classList.add('visible');
-				$bgs[pos].classList.add('top');
+			$bgs[pos].classList.add('visible');
+			$bgs[pos].classList.add('top');
 
 				// Bail if we only have a single BG or the client doesn't support transitions.
-					if ($bgs.length == 1
+				if ($bgs.length == 1
 					||	!canUse('transition'))
 						return;
 
@@ -84,18 +99,18 @@
 					pos++;
 
 					// Wrap to beginning if necessary.
-						if (pos >= $bgs.length)
-							pos = 0;
+					if (pos >= $bgs.length)
+						pos = 0;
 
 					// Swap top images.
-						$bgs[lastPos].classList.remove('top');
-						$bgs[pos].classList.add('visible');
-						$bgs[pos].classList.add('top');
+					$bgs[lastPos].classList.remove('top');
+					$bgs[pos].classList.add('visible');
+					$bgs[pos].classList.add('top');
 
 					// Hide last image after a short delay.
-						window.setTimeout(function() {
-							$bgs[lastPos].classList.remove('visible');
-						}, settings.delay / 2);
+					window.setTimeout(function() {
+						$bgs[lastPos].classList.remove('visible');
+					}, settings.delay / 2);
 
 				}, settings.delay);
 
