@@ -1030,6 +1030,11 @@ input, select, textarea {
 		margin: 0 0 0.55em 0;
 	}
 
+	#header img {
+		margin: 0 0 0.55em 0;
+    width: 35em;
+	}
+
 	#header p {
 		font-size: 1.35em;
 		line-height: 1.65em;
@@ -1045,6 +1050,10 @@ input, select, textarea {
 			font-size: 2em;
 		}
 
+  	#header img {
+      width: 25em;
+	  }
+
 		#header p {
 			font-size: 1em;
 		}
@@ -1056,6 +1065,10 @@ input, select, textarea {
 		#header {
 			margin: 0 0 1em 0;
 		}
+
+	  #header img {
+      width: 25em;
+  	}
 
 	}
 
