@@ -65,3 +65,29 @@ Credits:
 
 	Other:
 		Responsive Tools (github.com/ajlkn/responsive-tools)
+
+Docker:
+
+Create Dockerfile w/ nginx webserver:
+
+```
+FROM nginx:alpine
+
+COPY . /usr/share/nginx/html
+```
+
+Build image w/ version tag:
+
+```
+docker build -t $imageName:$tag .
+```
+
+Run docker image w/ exposed port:
+
+```
+docker run -d -p 8080:80 www-je-eventually:v1
+```
+
+Confirm Nginx web-server running via browser address:
+
+localhost:8080
