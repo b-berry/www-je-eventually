@@ -51,7 +51,7 @@
         'images/backgrounds/je-bg-14.jpg': 'center'
 		  },
 		  // Delay.
-		  delay: 11000
+		  delay: 19000
 	  };
 
 		// Vars.
