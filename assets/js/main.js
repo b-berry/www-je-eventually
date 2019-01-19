@@ -107,7 +107,7 @@
 
 		})();
 
-	// Signup Form.
+  // Signup Form.
 	(function() {
 
 		// Vars.
@@ -153,6 +153,24 @@
 			// Process form.
 			// Note: Doesn't actually do anything yet (other than report back with a "thank you"),
 			// but there's enough here to piece together a working AJAX submission call that does.
+      var scheme = 'http' + '://'
+      var host = 'localhost'
+      var port = '3000'
+      var path = 'api/subscribe'
+      var access_key = 'foo'
+      var access_token = 'bar'
+      var url = scheme + host + ':' + port + '/' + path + 'access_key=' + access_key + '?access_token' + access_token
+      var data = $form.serialize();
+      var method = $form.getAttribute('method');
+      $.ajax({
+        url : url,
+        headers: {'Access-Control-Allow-Origin': 'Content-Type'},
+        type : method,
+        data : data,
+               contentType: false,
+               cache: false,
+               processData: false
+      })
 			window.setTimeout(function() {
         // Reset form.
 	      $form.reset();
