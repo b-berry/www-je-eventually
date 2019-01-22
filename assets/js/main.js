@@ -158,7 +158,7 @@
       var port = '3000'
       var path = 'api/subscribe'
       var access_key = 'replace_access_key'
-      var access_token = 'relace_access_token'
+      var access_token = 'replace_access_token'
       var url = scheme + host + ':' + port + '/' + path + 'access_key=' + access_key + '?access_token' + access_token
       var data = $form.serialize();
       var method = $form.getAttribute('method');
