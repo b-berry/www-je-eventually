@@ -1,3 +1,11 @@
+terraform {
+  required_version = ">= 0.12.9"
+}
+
+provider "aws" {
+  region = var.aws_region
+}
+
 resource "aws_kms_key" "www_je_key" {
   description             = "This key is used to encrypt bucket objects"
   deletion_window_in_days = var.s3_kms_delete_window
